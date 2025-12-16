@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alyssa Graham</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            padding: 70px 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #d81b60;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #d81b60, #f48fb1);
+            margin: 30px auto;
+            border-radius: 2px;
+        }
+
+        .intro-section {
+            margin-top: 40px;
+        }
+
+        .intro-section h2 {
+            font-size: 1.8em;
+            color: #d81b60;
+            margin-bottom: 25px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .intro-section h2::before {
+            content: '✿';
+            font-size: 1.2em;
+        }
+
+        .intro-text {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #555;
+            text-align: left;
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #d81b60;
+            font-size: 1.1em;
+            padding: 12px 30px;
+            border: 2px solid #d81b60;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .nav-link:hover {
+            background: #d81b60;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 50px 35px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .intro-section h2 {
+                font-size: 1.5em;
+            }
+            
+            .intro-text {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Alyssa Graham</h1>
+        
+        <div class="divider"></div>
+        
+        <div class="intro-section">
+            <h2>About Me</h2>
+            <div class="intro-text">
+                <p>
+                    Write your introduction here! Tell visitors who you are, what you're studying, 
+                    and what you're passionate about.
+                </p>
+                <p>
+                    Share your story - what drives you, what excites you, and what makes you unique. 
+                    This is your chance to connect with people who visit your portfolio.
+                </p>
+                <p>
+                    Add as many paragraphs as you need to tell your story authentically.
+                </p>
+            </div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+    </div>
+</body>
+</html>
