@@ -4,7 +4,7 @@ layout: default
 
 # About Me
 
-Write your bio here. This theme will automatically add your title from _config.yml at the top.
+hi! i'm alyssa
 
 ## Projects
 
