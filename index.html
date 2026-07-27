@@ -1,228 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alyssa Graham</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 70px 60px;
-            display: flex;
-            align-items: center;
-            gap: 80px;
-        }
-
-        .photo-section {
-            flex-shrink: 0;
-            width: 350px;
-        }
-
-        .photo-placeholder {
-            width: 350px;
-            height: 450px;
-            background: #f0f0f0;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 1.1em;
-        }
-
-        .photo-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-
-        .content-section {
-            flex: 1;
-            text-align: left;
-        }
-
-        h1 {
-            font-size: 3.5em;
-            color: #d81b60;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .divider {
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #d81b60, #f48fb1);
-            margin: 30px 0;
-            border-radius: 2px;
-        }
-
-        .intro-section {
-            margin-top: 40px;
-        }
-
-        .intro-section h2 {
-            font-size: 1.8em;
-            color: #d81b60;
-            margin-bottom: 25px;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .intro-section h2::before {
-            content: '✿';
-            font-size: 1.2em;
-        }
-
-        .intro-text {
-            font-size: 1.15em;
-            line-height: 1.9;
-            color: #555;
-            text-align: left;
-        }
-
-        .intro-text p {
-            margin-bottom: 20px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #d81b60;
-            font-size: 1.1em;
-            padding: 12px 30px;
-            border: 2px solid #d81b60;
-            border-radius: 25px;
-            transition: all 0.3s;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .nav-link:hover {
-            background: #d81b60;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
-        }
-
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .photo-section {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-            
-            .photo-placeholder {
-                width: 300px;
-                height: 380px;
-            }
-            
-            .content-section {
-                text-align: center;
-            }
-            
-            .intro-text {
-                text-align: left;
-            }
-            
-            .intro-section h2 {
-                justify-content: center;
-            }
-            
-            .nav-links {
-                justify-content: center;
-            }
-            
-            .divider {
-                margin: 30px auto;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 50px 35px;
-            }
-            
-            h1 {
-                font-size: 2.5em;
-            }
-            
-            .intro-section h2 {
-                font-size: 1.5em;
-            }
-            
-            .intro-text {
-                font-size: 1.05em;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alyssa Graham — Network Engineering &amp; IT Infrastructure</title>
+<meta name="description" content="Alyssa Graham — network engineering &amp; IT infrastructure student at Purdue University, aiming toward network engineering, systems administration, and airline/aviation IT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="photo-section">
-            <div class="photo-placeholder">
-                <img src="your-photo.jpg" alt="Alyssa Graham">
-                <!-- Replace src with your photo filename -->
-            </div>
-        </div>
-        
-        <div class="content-section">
-            <h1>Alyssa Graham</h1>
-            
-            <div class="divider"></div>
-            
-            <div class="intro-section">
-                <h2>About Me</h2>
-                <div class="intro-text">
-                    <p>
-                        Write your introduction here! Tell visitors who you are, what you're studying, 
-                        and what you're passionate about.
-                    </p>
-                    <p>
-                        Share your story - what drives you, what excites you, and what makes you unique. 
-                        This is your chance to connect with people who visit your portfolio.
-                    </p>
-                    <p>
-                        Add as many paragraphs as you need to tell your story authentically.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="nav-links">
-                <a href="projects.html" class="nav-link">Projects</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-        </div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">alyssa graham<span class="dot">.</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">home</a>
+      <a href="about.html">about</a>
+      <a href="projects.html">projects</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">ALYSSA GRAHAM <span class="dot">//</span> NETWORK ENGINEERING &amp; IT INFRASTRUCTURE</p>
+
+      <h1 class="headline">I build the infrastructure that keeps things connected.</h1>
+
+      <p class="lede">
+        Junior double-majoring in Network Engineering Technology and Computing Systems
+        Analysis &amp; Design at Purdue University. Headed toward a career in network
+        engineering, systems administration, or IT infrastructure — ideally in the
+        airline and aviation industry, where the network has to hold up every time.
+      </p>
+
+      <div class="tag-row">
+        <span class="tag">NETWORK ENGINEERING</span>
+        <span class="tag">SYSTEMS ADMINISTRATION</span>
+        <span class="tag">IT INFRASTRUCTURE</span>
+        <span class="tag">AVIATION &amp; AIRLINES</span>
+      </div>
+
+      <!-- Signature element: a hub-and-spoke route map. Reads as an airline
+           route board and a network topology diagram at once — the same
+           shape shows up in both of Alyssa's worlds. -->
+      <svg class="route-map" viewBox="0 0 900 260" role="img" aria-label="Diagram of a central hub connected to six points, styled like an airline route map or a network topology diagram">
+        <path class="path" d="M450,150 Q290,90 120,60" />
+        <path class="path" d="M450,150 Q340,80 250,40" />
+        <path class="path" d="M450,150 Q540,80 620,50" />
+        <path class="path live" d="M450,150 Q610,110 770,90" />
+        <path class="path" d="M450,150 Q620,170 760,210" />
+        <path class="path" d="M450,150 Q310,190 180,220" />
+
+        <circle class="node" cx="120" cy="60" r="4"></circle>
+        <text x="130" y="57">ORD</text>
+
+        <circle class="node" cx="250" cy="40" r="4"></circle>
+        <text x="260" y="37">DFW</text>
+
+        <circle class="node" cx="620" cy="50" r="4"></circle>
+        <text x="630" y="47">ATL</text>
+
+        <circle class="node" cx="770" cy="90" r="4"></circle>
+        <text x="780" y="87">RTR-1</text>
+
+        <circle class="node" cx="760" cy="210" r="4"></circle>
+        <text x="770" y="213">VLAN-10</text>
+
+        <circle class="node" cx="180" cy="220" r="4"></circle>
+        <text x="190" y="223">SW-04</text>
+
+        <circle class="node hub" cx="450" cy="150" r="6"></circle>
+        <text x="450" y="140" text-anchor="middle" style="fill: var(--navy); font-weight: 500;">PUR</text>
+      </svg>
+
+      <div class="cta-row">
+        <a class="btn primary" href="https://www.linkedin.com/in/alyssadg/" target="_blank" rel="noopener">View my LinkedIn ↗</a>
+        <a class="btn" href="mailto:alyssadg@purdue.edu">Email me</a>
+        <a class="btn" href="https://github.com/7lyssa" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
     </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="mailto:alyssadg@purdue.edu">alyssadg@purdue.edu</a>
+      <a href="https://www.linkedin.com/in/alyssadg/" target="_blank" rel="noopener">linkedin.com/in/alyssadg</a>
+      <a href="https://github.com/7lyssa" target="_blank" rel="noopener">github.com/7lyssa</a>
+    </div>
+    <p class="footer-note">Purdue University · Network Engineering Technology &amp; Computing Systems Analysis and Design</p>
+  </div>
+</footer>
+
 </body>
 </html>
