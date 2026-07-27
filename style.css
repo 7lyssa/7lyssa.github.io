@@ -1,398 +1,246 @@
-/* ============================================================
-   Alyssa Graham — portfolio
-   Design tokens
-   ============================================================ */
-:root {
-  --paper:      #f3f4f0;   /* base background — cool paper, not warm cream */
-  --paper-dim:  #e9eae4;   /* card / panel background */
-  --ink:        #12151c;   /* primary text */
-  --navy:       #1b2a4a;   /* deep runway-night navy — headings, primary accents */
-  --steel:      #5c6b82;   /* secondary text */
-  --line:       #d6d5cc;   /* hairline rules */
-  --amber:      #e2982f;   /* beacon amber — signature accent, used sparingly */
-  --amber-dim:  #f4dcb4;   /* soft amber for tag backgrounds */
-  --mono-tag:   #eef0ec;
+/* ────────────────────────────── */
+/* FONT IMPORT */
+/* ────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
 
-  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
-  --font-body:    "IBM Plex Sans", "Segoe UI", sans-serif;
-  --font-mono:    "IBM Plex Mono", ui-monospace, "Courier New", monospace;
 
-  --max-w: 980px;
+/* ────────────────────────────── */
+/* NAVBAR (same on every page) */
+/* ────────────────────────────── */
+.navbar {
+    background-color: transparent;
+    border: none;
+    margin: 40px 0 60px 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* Intentionally not implementing a dark theme — keep one considered
-     palette rather than an auto-generated inverse. */
+.navbar-brand {
+    font-family: "Instrument Serif", serif;
+    font-size: 28px;
+    font-style: italic;
+    color: black;
+    text-decoration: none;
 }
 
-* { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
+.nav-link {
+    text-decoration: none;
+    color: black;
 }
 
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+
+/* ────────────────────────────── */
+/* MAIN SECTION (default spacing) */
+/* ────────────────────────────── */
+main {
+    margin-bottom: 140px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+
+/* ────────────────────────────── */
+/* TYPOGRAPHY */
+/* ────────────────────────────── */
+body,
+p {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    color: black;
 }
 
-a {
-  color: var(--navy);
-  text-decoration-color: var(--amber);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-}
-a:hover { color: var(--amber); }
-
-:focus-visible {
-  outline: 2px solid var(--amber);
-  outline-offset: 3px;
-  border-radius: 2px;
+h1 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    color: black;
 }
 
-.wrap {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 28px;
+h2 {
+    font-family: "Instrument Serif", serif;
+    font-size: 50px;
+    font-style: italic;
+    color: black;
 }
 
-/* ---------------------------------------------------------
-   Header / nav — styled like a small system status bar
-   --------------------------------------------------------- */
-.site-header {
-  border-bottom: 1px solid var(--line);
-  padding: 22px 0;
-}
-.site-header .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.brand {
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  color: var(--navy);
-  text-decoration: none;
-}
-.brand:hover { color: var(--navy); }
-.brand .dot { color: var(--amber); }
-
-.site-nav {
-  display: flex;
-  gap: 26px;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.03em;
-}
-.site-nav a {
-  text-decoration: none;
-  color: var(--steel);
-  padding-bottom: 3px;
-  border-bottom: 2px solid transparent;
-}
-.site-nav a:hover { color: var(--navy); border-bottom-color: var(--amber); }
-.site-nav a[aria-current="page"] {
-  color: var(--navy);
-  border-bottom-color: var(--amber);
+h3 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    color: black;
 }
 
-/* ---------------------------------------------------------
-   Hero
-   --------------------------------------------------------- */
-.hero {
-  padding: 72px 0 56px;
-}
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--steel);
-  letter-spacing: 0.06em;
-  margin: 0 0 18px;
-}
-.eyebrow .dot { color: var(--amber); }
-
-h1.headline {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(2.1rem, 5vw, 3.4rem);
-  line-height: 1.12;
-  letter-spacing: -0.01em;
-  color: var(--navy);
-  margin: 0 0 22px;
-  max-width: 16ch;
+h4 {
+    font-family: "Instrument Serif", serif;
+    font-size: 28px;
+    font-style: italic;
+    color: black;
 }
 
-.lede {
-  font-size: 1.12rem;
-  color: var(--ink);
-  max-width: 56ch;
-  margin: 0 0 28px;
+
+/* ────────────────────────────── */
+/* FOOTER (always the same) */
+/* ────────────────────────────── */
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    font-size: 28px;
+    margin-bottom: 40px;
 }
 
-.tag-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-.tag {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
-  color: var(--navy);
-  background: var(--amber-dim);
-  padding: 6px 12px;
-  border-radius: 3px;
+
+/* ────────────────────────────── */
+/* LINK HOVER */
+/* ────────────────────────────── */
+a:hover,
+.nav-link:hover,
+.navbar-brand:hover {
+    color: #4a90d9 !important;
+    text-decoration: none;
 }
 
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
-  text-decoration: none;
-  padding: 11px 20px;
-  border-radius: 4px;
-  border: 1.5px solid var(--navy);
-  color: var(--navy);
-}
-.btn:hover { background: var(--navy); color: var(--paper); }
-.btn.primary {
-  background: var(--navy);
-  color: var(--paper);
-}
-.btn.primary:hover { background: var(--amber); border-color: var(--amber); color: var(--navy); }
 
-/* ---------------------------------------------------------
-   Signature element — route / topology map
-   Dual reading: flight routes between airports, or a network
-   diagram between nodes. Kept quiet everywhere else on the
-   page so this carries the visual weight.
-   --------------------------------------------------------- */
-.route-map {
-  width: 100%;
-  height: auto;
-  margin: 8px 0 8px;
-}
-.route-map .path {
-  fill: none;
-  stroke: var(--steel);
-  stroke-width: 1.2;
-  stroke-dasharray: 3 4;
-  opacity: 0.7;
-}
-.route-map .path.live {
-  stroke: var(--amber);
-  stroke-width: 1.6;
-  stroke-dasharray: none;
-}
-.route-map .node {
-  fill: var(--navy);
-}
-.route-map .node.hub {
-  fill: var(--amber);
-}
-.route-map text {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  fill: var(--steel);
-  letter-spacing: 0.02em;
+/* ────────────────────────────── */
+/* ANIMATIONS — accent color cycles blue/steel/amber, nodding to sky + runway lights */
+/* ────────────────────────────── */
+.blink-blue {
+    animation: blueBlink 2s ease-in-out infinite;
 }
 
-/* ---------------------------------------------------------
-   Section scaffolding
-   --------------------------------------------------------- */
-section {
-  padding: 40px 0;
-  border-top: 1px solid var(--line);
-}
-section:first-of-type { border-top: none; }
-
-h2.section-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: var(--navy);
-  margin: 0 0 24px;
+@keyframes blueBlink {
+    0%, 100% { color: rgb(45, 91, 138); }
+    50% { color: #5ba3d0; }
 }
 
-/* ---------------------------------------------------------
-   About page
-   --------------------------------------------------------- */
-.about-grid {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 56px;
-  align-items: start;
-  padding: 56px 0 20px;
+.blink-blueamber {
+    animation: blueamberBlink 3s ease-in-out infinite;
 }
-@media (max-width: 720px) {
-  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+
+@keyframes blueamberBlink {
+    0%   { color: rgb(45, 91, 138); }
+    25%  { color: rgb(74, 144, 217); }
+    50%  { color: rgb(226, 152, 47); }
+    75%  { color: rgb(91, 163, 208); }
+    100% { color: rgb(45, 91, 138); }
+}
+
+/* BUTTON — animated text, same treatment as other links */
+.resume-btn {
+    padding: 12px 25px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    font-style: italic;
+    cursor: grab;
+    text-decoration: underline;
+    background: transparent;
+    border: none;
+}
+
+.resume-btn:hover {
+    color: black;
+    transform: scale(1.2);
+}
+
+
+/* ────────────────────────────── */
+/* PAGE-SPECIFIC SPACING (content only) */
+/* ────────────────────────────── */
+
+/* INDEX — more whitespace */
+#home-main {
+    margin-top: 120px;
+    margin-bottom: 200px;
+}
+
+/* ABOUT — image smaller + text aligned */
+.about-main img {
+    max-width: 70%;
+}
+
+.about-main p {
+    margin-bottom: 6px;
+}
+
+.about-main h2 {
+    margin-top: 0;
 }
 
 .photo-frame {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: 6px;
-  border: 1.5px dashed var(--line);
-  background: var(--paper-dim);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  color: var(--steel);
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  line-height: 1.5;
+    width: 100%;
+    max-width: 70%;
+    aspect-ratio: 4 / 5;
+    border-radius: 24px;
+    border: 6px solid #cfe0ee;
+    background: #f4f6f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #7a8a9a;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    padding: 20px;
 }
+
 .photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-  border: none;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    max-width: 100%;
 }
 
-.bio p {
-  margin: 0 0 20px;
-  max-width: 58ch;
-}
 
-/* config-file styled fact block */
-.config-block {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  background: var(--paper-dim);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 22px 24px;
-  margin-top: 28px;
-}
-.config-block .row {
-  display: grid;
-  grid-template-columns: 130px 1fr;
-  gap: 14px;
-  padding: 6px 0;
-}
-.config-block .key { color: var(--steel); }
-.config-block .val { color: var(--ink); }
-@media (max-width: 480px) {
-  .config-block .row { grid-template-columns: 1fr; gap: 2px; padding: 10px 0; }
-}
-
-.focus-list {
-  list-style: none;
-  margin: 20px 0 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.focus-list li {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--navy);
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  padding: 6px 11px;
-}
-
-/* ---------------------------------------------------------
-   Projects page
-   --------------------------------------------------------- */
+/* ───────── PROJECT CARDS ───────── */
 .project-card {
-  padding: 30px 0;
-  border-top: 1px solid var(--line);
+    border: none;
+    background: transparent;
 }
-.project-card:first-child { border-top: none; padding-top: 0; }
 
-.project-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 4px;
+.project-icon {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    background: #eef3f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.project-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: var(--navy);
-  margin: 0;
+
+.project-icon i {
+    font-size: 42px;
+    color: #2d5b8a;
 }
-.project-dates {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--steel);
-  white-space: nowrap;
+
+.project-meta {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #7a8a9a;
+    margin-bottom: 4px;
 }
-.project-context {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--steel);
-  margin: 0 0 16px;
+
+.project-desc {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    text-align: left;
+    margin-top: 10px;
 }
-.project-bullets {
-  margin: 0 0 16px;
-  padding-left: 20px;
+
+.project-desc ul {
+    padding-left: 18px;
+    margin-bottom: 10px;
 }
-.project-bullets li { margin-bottom: 8px; max-width: 62ch; }
 
 .skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.skill-tags span {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--navy);
-  background: var(--mono-tag);
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  padding: 4px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 8px;
 }
 
-/* ---------------------------------------------------------
-   Footer
-   --------------------------------------------------------- */
-.site-footer {
-  border-top: 1px solid var(--line);
-  padding: 36px 0 50px;
-  margin-top: 20px;
-}
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-}
-.footer-note {
-  margin-top: 18px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--steel);
+.skill-tags span {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    background: #eef3f7;
+    color: #2d5b8a;
+    padding: 3px 9px;
+    border-radius: 10px;
 }
