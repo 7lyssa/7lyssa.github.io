@@ -121,6 +121,20 @@ a:hover,
     100% { color: rgb(45, 91, 138); }
 }
 
+.blink-rainbow {
+    animation: rainbowBlink 4s linear infinite;
+}
+
+@keyframes rainbowBlink {
+    0%   { color: red; }
+    17%  { color: orange; }
+    33%  { color: #d4c400; }
+    50%  { color: green; }
+    67%  { color: blue; }
+    83%  { color: violet; }
+    100% { color: red; }
+}
+
 /* BUTTON — animated text, same treatment as other links */
 .resume-btn {
     padding: 12px 25px;
