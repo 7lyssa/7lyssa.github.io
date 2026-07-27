@@ -1,0 +1,398 @@
+/* ============================================================
+   Alyssa Graham — portfolio
+   Design tokens
+   ============================================================ */
+:root {
+  --paper:      #f3f4f0;   /* base background — cool paper, not warm cream */
+  --paper-dim:  #e9eae4;   /* card / panel background */
+  --ink:        #12151c;   /* primary text */
+  --navy:       #1b2a4a;   /* deep runway-night navy — headings, primary accents */
+  --steel:      #5c6b82;   /* secondary text */
+  --line:       #d6d5cc;   /* hairline rules */
+  --amber:      #e2982f;   /* beacon amber — signature accent, used sparingly */
+  --amber-dim:  #f4dcb4;   /* soft amber for tag backgrounds */
+  --mono-tag:   #eef0ec;
+
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body:    "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+
+  --max-w: 980px;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Intentionally not implementing a dark theme — keep one considered
+     palette rather than an auto-generated inverse. */
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+a {
+  color: var(--navy);
+  text-decoration-color: var(--amber);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--amber); }
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------------------------------------------------------
+   Header / nav — styled like a small system status bar
+   --------------------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.brand {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  text-decoration: none;
+}
+.brand:hover { color: var(--navy); }
+.brand .dot { color: var(--amber); }
+
+.site-nav {
+  display: flex;
+  gap: 26px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+.site-nav a {
+  text-decoration: none;
+  color: var(--steel);
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--navy); border-bottom-color: var(--amber); }
+.site-nav a[aria-current="page"] {
+  color: var(--navy);
+  border-bottom-color: var(--amber);
+}
+
+/* ---------------------------------------------------------
+   Hero
+   --------------------------------------------------------- */
+.hero {
+  padding: 72px 0 56px;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--steel);
+  letter-spacing: 0.06em;
+  margin: 0 0 18px;
+}
+.eyebrow .dot { color: var(--amber); }
+
+h1.headline {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  margin: 0 0 22px;
+  max-width: 16ch;
+}
+
+.lede {
+  font-size: 1.12rem;
+  color: var(--ink);
+  max-width: 56ch;
+  margin: 0 0 28px;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  background: var(--amber-dim);
+  padding: 6px 12px;
+  border-radius: 3px;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  text-decoration: none;
+  padding: 11px 20px;
+  border-radius: 4px;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+}
+.btn:hover { background: var(--navy); color: var(--paper); }
+.btn.primary {
+  background: var(--navy);
+  color: var(--paper);
+}
+.btn.primary:hover { background: var(--amber); border-color: var(--amber); color: var(--navy); }
+
+/* ---------------------------------------------------------
+   Signature element — route / topology map
+   Dual reading: flight routes between airports, or a network
+   diagram between nodes. Kept quiet everywhere else on the
+   page so this carries the visual weight.
+   --------------------------------------------------------- */
+.route-map {
+  width: 100%;
+  height: auto;
+  margin: 8px 0 8px;
+}
+.route-map .path {
+  fill: none;
+  stroke: var(--steel);
+  stroke-width: 1.2;
+  stroke-dasharray: 3 4;
+  opacity: 0.7;
+}
+.route-map .path.live {
+  stroke: var(--amber);
+  stroke-width: 1.6;
+  stroke-dasharray: none;
+}
+.route-map .node {
+  fill: var(--navy);
+}
+.route-map .node.hub {
+  fill: var(--amber);
+}
+.route-map text {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  fill: var(--steel);
+  letter-spacing: 0.02em;
+}
+
+/* ---------------------------------------------------------
+   Section scaffolding
+   --------------------------------------------------------- */
+section {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+}
+section:first-of-type { border-top: none; }
+
+h2.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin: 0 0 24px;
+}
+
+/* ---------------------------------------------------------
+   About page
+   --------------------------------------------------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 56px;
+  align-items: start;
+  padding: 56px 0 20px;
+}
+@media (max-width: 720px) {
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 6px;
+  border: 1.5px dashed var(--line);
+  background: var(--paper-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: var(--steel);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  border: none;
+  display: block;
+}
+
+.bio p {
+  margin: 0 0 20px;
+  max-width: 58ch;
+}
+
+/* config-file styled fact block */
+.config-block {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  background: var(--paper-dim);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 22px 24px;
+  margin-top: 28px;
+}
+.config-block .row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 14px;
+  padding: 6px 0;
+}
+.config-block .key { color: var(--steel); }
+.config-block .val { color: var(--ink); }
+@media (max-width: 480px) {
+  .config-block .row { grid-template-columns: 1fr; gap: 2px; padding: 10px 0; }
+}
+
+.focus-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.focus-list li {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--navy);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 6px 11px;
+}
+
+/* ---------------------------------------------------------
+   Projects page
+   --------------------------------------------------------- */
+.project-card {
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+}
+.project-card:first-child { border-top: none; padding-top: 0; }
+
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.project-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin: 0;
+}
+.project-dates {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--steel);
+  white-space: nowrap;
+}
+.project-context {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--steel);
+  margin: 0 0 16px;
+}
+.project-bullets {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+.project-bullets li { margin-bottom: 8px; max-width: 62ch; }
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skill-tags span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--navy);
+  background: var(--mono-tag);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 4px 10px;
+}
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 36px 0 50px;
+  margin-top: 20px;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+.footer-note {
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--steel);
+}
