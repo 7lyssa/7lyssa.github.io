@@ -129,7 +129,8 @@ a:hover,
     0%   { color: red; }
     17%  { color: orange; }
     33%  { color: #d4c400; }
-    50%  { color: green; }
+    45%  { color: #22c55e; }
+    55%  { color: #22c55e; }
     67%  { color: blue; }
     83%  { color: violet; }
     100% { color: red; }
